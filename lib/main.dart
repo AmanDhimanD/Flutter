@@ -2,6 +2,8 @@ import 'package:app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app/pages/login_page.dart';
 
+
+
 void main(List<String> args) {
   runApp(MyApp());
 }
@@ -27,7 +29,11 @@ class MyApp extends StatelessWidget {
 
       //Colors works with LIGHT and Brightness mode
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      theme: ThemeData(
+        primarySwatch: Colors.lightGreen,
+        //we can use Google Font With import 
+        // primaryTextTheme: GoogleFonts.),
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
@@ -36,8 +42,7 @@ class MyApp extends StatelessWidget {
 //__________________________________
       // initialRoute: "/home",
       routes: {
-        "/": (context) =>
-            LoginPage(), //this is object of class, new keyword can use
+        "/": (context) =>LoginPage(), //this is object of class, new keyword can use
         "/home": (context) => HomePage(),
         "/login": (context) => LoginPage()
       },
