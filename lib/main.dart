@@ -1,8 +1,8 @@
+// import 'dart:html';
 import 'package:app/pages/home_page.dart';
+import 'package:app/pages/utils/rotues.dart';
 import 'package:flutter/material.dart';
 import 'package:app/pages/login_page.dart';
-
-
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -31,20 +31,30 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
-        //we can use Google Font With import 
+        //we can use Google Font With import
         // primaryTextTheme: GoogleFonts.),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
 
+      /* ---
+      For Remove the DEBEG banner from phone
+      ---------- */
+      debugShowCheckedModeBanner: false,
+
       //set Fix home page as first page
 //__________________________________
       // initialRoute: "/home",
       routes: {
-        "/": (context) =>LoginPage(), //this is object of class, new keyword can use
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage()
+        "/": (context) =>
+            LoginPage(), //this is object of class, new keyword can use
+            //1.Method
+        // "/home": (context) => HomePage(),
+        // "/login": (context) => LoginPage()
+        //2.Method 
+        MyRoutes.homeRoutes:(context)=>HomePage(),
+        MyRoutes.loginRoutes:(context)=>LoginPage()
       },
     );
   }
