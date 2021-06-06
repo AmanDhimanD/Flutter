@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
 
       //set Fix home page as first page
 //__________________________________
-      // initialRoute: "/home",
+      initialRoute: MyRoutes.homeRoutes,
       routes: {
         "/": (context) =>
             LoginPage(), //this is object of class, new keyword can use
