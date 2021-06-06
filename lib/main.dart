@@ -1,6 +1,7 @@
 // import 'dart:html';
 import 'package:app/pages/home_page.dart';
 import 'package:app/pages/utils/rotues.dart';
+import 'package:app/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:app/pages/login_page.dart';
 
@@ -29,15 +30,15 @@ class MyApp extends StatelessWidget {
 
       //Colors works with LIGHT and Brightness mode
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-        //we can use Google Font With import
-        // primaryTextTheme: GoogleFonts.),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-
+      // theme: ThemeData(
+      //   primarySwatch: Colors.lightGreen,
+      //   //we can use Google Font With import
+      //   // primaryTextTheme: GoogleFonts.),
+      // ),
+      theme:MyThemes.LightTheme(context),
+      darkTheme: MyThemes.darkTheme(context),
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.dark),
       /* ---
       For Remove the DEBEG banner from phone
       ---------- */
